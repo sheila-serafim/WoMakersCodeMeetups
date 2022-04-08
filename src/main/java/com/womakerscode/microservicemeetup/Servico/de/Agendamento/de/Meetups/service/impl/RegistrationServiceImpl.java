@@ -11,12 +11,14 @@ import java.util.Optional;
 @Service
 public class RegistrationServiceImpl implements RegistrationService {
 
-    RegistrationRepository repository;
+    private RegistrationRepository repository;
 
     public RegistrationServiceImpl(RegistrationRepository repository) {
+
         this.repository = repository;
     }
 
+    @Override
     public Registration save(Registration registration) {
 
         if(repository.existsByRegistration(registration.getRegistration())){

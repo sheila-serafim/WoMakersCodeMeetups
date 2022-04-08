@@ -30,6 +30,7 @@ public class RegistrationServiceTest {
 
     @BeforeEach
     public void setUp(){
+
         this.registrationService = new RegistrationServiceImpl(repository);
     }
 
@@ -87,7 +88,7 @@ public class RegistrationServiceTest {
         Integer id = 11;
         Registration registration = createValidRegistration();
         registration.setId(id);
-        Mockito.when(repository.findById(id)).thenReturn(Optional.of(registration));
+        Mockito.when(repository.findById(registration.getId())).thenReturn(Optional.of(registration));
 
         //execucao
         Optional<Registration> foundRegistration = registrationService.getRegistrationById(id);

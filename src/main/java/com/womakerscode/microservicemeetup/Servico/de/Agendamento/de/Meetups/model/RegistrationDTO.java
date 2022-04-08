@@ -1,4 +1,4 @@
-package com.womakerscode.microservicemeetup.Servico.de.Agendamento.de.Meetups.model.entity;
+package com.womakerscode.microservicemeetup.Servico.de.Agendamento.de.Meetups.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

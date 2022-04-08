@@ -3,7 +3,7 @@ package com.womakerscode.microservicemeetup.Servico.de.Agendamento.de.Meetups.re
 import com.womakerscode.microservicemeetup.Servico.de.Agendamento.de.Meetups.model.entity.Registration;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface RegistrationRepository extends JpaRepository<Registration,Integer> {
+public interface RegistrationRepository extends JpaRepository<Registration, Integer> {
 
-    boolean existsByRegistration(String registration);
+    Boolean existsByRegistration(String registration);
 }
