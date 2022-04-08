@@ -20,7 +20,7 @@ public class Registration {
     @Id
     @Column(name = "registration_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Integer id;
 
     @Column(name = "person_name")
     private String name;
