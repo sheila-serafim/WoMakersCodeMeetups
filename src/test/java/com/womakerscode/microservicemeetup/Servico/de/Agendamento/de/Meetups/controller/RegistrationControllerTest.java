@@ -109,8 +109,8 @@ public class RegistrationControllerTest {
         mockMvc
                 .perform(request)
                 .andExpect(status().isBadRequest())
-                .andExpect(jsonPath("erros", hasSize(1)))
-                .andExpect(jsonPath("erros[0]").value("Registration already created."));
+                .andExpect(jsonPath("errors", hasSize(1)))
+                .andExpect(jsonPath("errors[0]").value("Registration already created."));
     }
 
     @Test
