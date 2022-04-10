@@ -3,6 +3,7 @@ package com.womakerscode.microservicemeetup.Servico.de.Agendamento.de.Meetups.co
 import com.womakerscode.microservicemeetup.Servico.de.Agendamento.de.Meetups.controller.exception.APIError;
 import com.womakerscode.microservicemeetup.Servico.de.Agendamento.de.Meetups.exception.BusinessException;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -31,8 +32,8 @@ public class ApplicationControllerAdvice {
 
     @ExceptionHandler(ResponseStatusException.class)
     @ResponseStatus
-    public APIError handleResponseStatusException(ResponseStatusException e) {
+    public ResponseEntity handleResponseStatusException(ResponseStatusException e) {
 
-        return new APIError(e);
+        return new ResponseEntity(new APIError(e),e.getStatus());
     }
 }
