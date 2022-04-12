@@ -1,8 +1,9 @@
 package com.womakerscode.microservicemeetup.Servico.de.Agendamento.de.Meetups.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.womakerscode.microservicemeetup.Servico.de.Agendamento.de.Meetups.controller.resource.RegistrationController;
 import com.womakerscode.microservicemeetup.Servico.de.Agendamento.de.Meetups.exception.BusinessException;
-import com.womakerscode.microservicemeetup.Servico.de.Agendamento.de.Meetups.model.RegistrationDTO;
+import com.womakerscode.microservicemeetup.Servico.de.Agendamento.de.Meetups.controller.dto.RegistrationDTO;
 import com.womakerscode.microservicemeetup.Servico.de.Agendamento.de.Meetups.model.entity.Registration;
 import com.womakerscode.microservicemeetup.Servico.de.Agendamento.de.Meetups.service.RegistrationService;
 import org.hamcrest.Matchers;
@@ -15,7 +16,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;

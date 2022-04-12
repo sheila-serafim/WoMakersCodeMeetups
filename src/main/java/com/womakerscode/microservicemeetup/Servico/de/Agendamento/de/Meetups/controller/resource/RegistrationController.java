@@ -1,10 +1,9 @@
-package com.womakerscode.microservicemeetup.Servico.de.Agendamento.de.Meetups.controller;
+package com.womakerscode.microservicemeetup.Servico.de.Agendamento.de.Meetups.controller.resource;
 
-import com.womakerscode.microservicemeetup.Servico.de.Agendamento.de.Meetups.model.RegistrationDTO;
+import com.womakerscode.microservicemeetup.Servico.de.Agendamento.de.Meetups.controller.dto.RegistrationDTO;
 import com.womakerscode.microservicemeetup.Servico.de.Agendamento.de.Meetups.model.entity.Registration;
 import com.womakerscode.microservicemeetup.Servico.de.Agendamento.de.Meetups.service.RegistrationService;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;

@@ -6,30 +6,29 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
-@Entity
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
-@Table
-public class Registration {
+@Entity
+public class Meetup {
 
     @Id
-    @Column(name = "registration_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "person_name")
-    private String name;
+    @Column
+    private String event;
 
-    @Column(name = "date_of_registration")
-    private String dateOfRegistration;
+    @JoinColumn(name = "id_registration")
+    @ManyToOne
+    // mtos meetups para 1 registro - registro só pode ir em um meetup
+    private Registration registration;
 
     @Column
-    private String registration;
+    private String meetupDate;
 
-    @OneToMany(mappedBy = "registration")
-    private List<Meetup> meetups;
+    @Column
+    private Boolean registered;
 }

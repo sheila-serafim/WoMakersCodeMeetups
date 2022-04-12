@@ -19,19 +19,22 @@ import static org.assertj.core.api.Assertions.assertThat;
 @DataJpaTest
 public class RegistrationRepositoryTest {
 
+
     @Autowired
     TestEntityManager entityManager;
 
     @Autowired
     RegistrationRepository repository;
 
+
     @Test
-    @DisplayName("Should return true when exists a registration already created.")
+    @DisplayName("Should return true when exists an registration already created.")
     public void returnTrueWhenRegistrationExists() {
 
         String registration = "123";
-        Registration registration_attribute = createNewRegistration(registration);
-        entityManager.persist(registration_attribute);
+
+        Registration registration_Class_attribute = createNewRegistration(registration);
+        entityManager.persist(registration_Class_attribute);
 
         boolean exists = repository.existsByRegistration(registration);
 
@@ -39,7 +42,7 @@ public class RegistrationRepositoryTest {
     }
 
     @Test
-    @DisplayName("Should return false when doesnt exists a registration_attribite with a registration already created.")
+    @DisplayName("Should return false when doesn't exists an registration_attribute with a registration already created.")
     public void returnFalseWhenRegistrationAttributeDoesntExists() {
 
         String registration = "123";
@@ -47,64 +50,61 @@ public class RegistrationRepositoryTest {
         boolean exists = repository.existsByRegistration(registration);
 
         assertThat(exists).isFalse();
+
     }
 
     @Test
-    @DisplayName("Should get a registration by ID.")
-    public void findByIDTest() {
+    @DisplayName("Should get an registration by id")
+    public void findByIdTest() {
 
-        Registration registration_attribute = createNewRegistration("323");
-        entityManager.persist(registration_attribute);
+        Registration registration_Class_attribute = createNewRegistration("323");
+        entityManager.persist(registration_Class_attribute);
 
         Optional<Registration> foundRegistration = repository
-                .findById(registration_attribute.getId());
+                .findById(registration_Class_attribute.getId());
 
         assertThat(foundRegistration.isPresent()).isTrue();
+
     }
 
     @Test
-    @DisplayName("Should save a registration")
+    @DisplayName("Should save an registration")
     public void saveRegistrationTest() {
 
-        Registration registration_attribute = createNewRegistration("323");
+        Registration registration_Class_attribute = createNewRegistration("323");
 
-        Registration savedRegistration = repository.save(registration_attribute);
+        Registration savedRegistration = repository.save(registration_Class_attribute);
 
         assertThat(savedRegistration.getId()).isNotNull();
+
     }
 
     @Test
-    @DisplayName("Should delete a student from database.")
-    public void deleteRegistration() {
+    @DisplayName("Should delete and registration from the base")
+    public void deleteRegistation() {
 
-        Registration registration_attribute = createNewRegistration("323");
-        entityManager.persist(registration_attribute);
+        Registration registration_Class_attribute = createNewRegistration("323");
+        entityManager.persist(registration_Class_attribute);
 
         Registration foundRegistration = entityManager
-                .find(Registration.class, registration_attribute.getId());
+                .find(Registration.class, registration_Class_attribute.getId());
         repository.delete(foundRegistration);
 
         Registration deleteRegistration = entityManager
-                .find(Registration.class, registration_attribute.getId());
+                .find(Registration.class, registration_Class_attribute.getId());
 
         assertThat(deleteRegistration).isNull();
+
     }
 
 
 
 
 
-
-
-
-
-    private Registration createNewRegistration(String registration) {
+    public static Registration createNewRegistration(String registration) {
         return Registration.builder()
                 .name("Sheila Neves")
-                .dateOfRegistration("10/10/2022")
-                .registration(registration)
-                .build();
+                .dateOfRegistration("10/10/2021")
+                .registration(registration).build();
     }
-
-
 }
