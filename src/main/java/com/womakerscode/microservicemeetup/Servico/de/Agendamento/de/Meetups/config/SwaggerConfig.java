@@ -19,7 +19,7 @@ public class SwaggerConfig {
     public Docket docket() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis( RequestHandlerSelectors.basePackage("com.bootcamp.microservicemeetup.controller.resource") )
+                .apis( RequestHandlerSelectors.basePackage("com.womakerscode.microservicemeetup.Servico.de.Agendamento.de.Meetups.controller.resource") )
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(apiInfo());
@@ -35,8 +35,8 @@ public class SwaggerConfig {
     }
 
     private Contact contact() {
-        return new Contact("Womakerscode Ana Neri",
-                "http://womakerscode.org",
-                "neribia7@gmail.com");
+        return new Contact("Sheila Neves",
+                "https://github.com/sheila-serafim",
+                "sheila.serafim@gmail.com");
     }
 }
