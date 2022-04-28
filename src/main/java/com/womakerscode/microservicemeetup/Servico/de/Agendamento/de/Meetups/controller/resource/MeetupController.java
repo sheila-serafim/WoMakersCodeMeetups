@@ -58,6 +58,7 @@ public class MeetupController {
 
                     MeetupDTO meetupDTO = modelMapper.map(entity, MeetupDTO.class);
                     meetupDTO.setRegistration(registrationDTO);
+                    meetupDTO.setRegistrationAttribute(registrationDTO.getRegistration());
                     return meetupDTO;
 
                 }).collect(Collectors.toList());

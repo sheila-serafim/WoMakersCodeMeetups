@@ -42,7 +42,7 @@ public class RegistrationServiceTest {
 
     @Test
     @DisplayName("Should save registration")
-    public void saveStudent(){
+    public void saveRegistration(){
 
         //cenario
         Registration registration = createValidRegistration();
@@ -112,7 +112,7 @@ public class RegistrationServiceTest {
     }
 
     @Test
-    @DisplayName("Should delete a student")
+    @DisplayName("Should delete a registration")
     public void deleteRegistrationTest(){
 
         Registration registration = Registration.builder().id(11).build();

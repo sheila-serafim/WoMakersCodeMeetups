@@ -2,6 +2,7 @@ package com.womakerscode.microservicemeetup.Servico.de.Agendamento.de.Meetups.co
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.womakerscode.microservicemeetup.Servico.de.Agendamento.de.Meetups.controller.dto.MeetupDTO;
+import com.womakerscode.microservicemeetup.Servico.de.Agendamento.de.Meetups.controller.dto.RegistrationDTO;
 import com.womakerscode.microservicemeetup.Servico.de.Agendamento.de.Meetups.controller.resource.MeetupController;
 import com.womakerscode.microservicemeetup.Servico.de.Agendamento.de.Meetups.exception.BusinessException;
 import com.womakerscode.microservicemeetup.Servico.de.Agendamento.de.Meetups.model.entity.Meetup;
