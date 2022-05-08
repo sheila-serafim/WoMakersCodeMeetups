@@ -8,3 +8,5 @@ Utilizamos também JUnit e Mockito pros testes.
 
 Nossas APIs foram desenvolvidas pelo método TDD, desenvolvimento orientado a testes.
 
+** Este código foi desenvolvido em conjunto com as professores da comunidade WoMakersCode, dentro de um bootcamp de Java.
+
